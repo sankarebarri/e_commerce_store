@@ -46,7 +46,7 @@
     $(document).on('click', '#add-button', function (e) {
         e.preventDefault();
         // console.log(e)
-        console.log($('#select option:selected').text())
+        // console.log($('#select option:selected').text())
 
         $.ajax({
             type: 'POST',
@@ -60,6 +60,8 @@
             },
             success: function (json) {
                 console.log(json)
+                // document.getElementById('basket-qty').innerHTML = json.quantity
+                // console.log(bas)
             },
             error: function (xhr, errmsg, err) {
 

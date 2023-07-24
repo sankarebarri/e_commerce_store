@@ -50,7 +50,16 @@
                         </li>
                     </ul>
                     <a href="{% url 'basket:basket_summary' %}" role="button" type="button" class="btn btn-secondary">
-                        1
+
+                        {% with total_qty=basket|length  %}
+                        {% if total_qty > 0 %}
+                        <div id="basket-qty" class="d-inline-flex">{{ total_qty }}</div>
+                        {% else %}
+                        <div id="basket-qty" class="d-inline-flex">0</div>
+                        {% endif %}
+
+                        {% endwith %}
+
                         <i class="bi bi-basket"></i>
                         Basket
                     </a>

@@ -23,3 +23,9 @@ class Basket():
             }
         
         self.session.modified = True
+
+    def __len__(self):
+        '''
+        Get the basket data and count the quantity of the items
+        '''
+        return sum(item['quantity'] for item in self.basket.values())
